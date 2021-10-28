@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             lateinit var cursoLista:ArrayList<Cursos>
             try {
                 getRetrofit().create(CursoAPI::class.java).getCursos("courses").execute().body()
-                    .also { cursoLista = List<Cursos> }
+                    .also { cursoLista = cambios}
 
             }catch (e:IOException){
                 e.printStackTrace()
