@@ -1,14 +1,11 @@
 package com.rodolfo.ceronekotlin
 
+import android.app.Application
 import androidx.room.Room
 
-class CursoApp extends Application (
-    val basededatoApp: BaseDeDatos? = null
+class CursoApp : Application() {
 
-    @Override
-    public void onCreate() (
-        super.onCreate()
-        CursoApp.basededatoApp =
-            Room.databaseBuilder(this, BaseDeDatos::class.java, "app-db").build()
-        )
-        )
+    val room = Room
+        .databaseBuilder(this, BaseDeDatos::class.java, "basededatoApp")
+        .build()
+}
